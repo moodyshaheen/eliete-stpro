@@ -28,7 +28,9 @@ function App() {
         { path: "about", element: <About /> },
       ]
     }
-  ]);
+  ], {
+    basename: '/eliete-stpro'
+  });
 
   return (
     <>
