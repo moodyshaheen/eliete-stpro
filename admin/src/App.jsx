@@ -13,24 +13,21 @@ import ErrorPage from './pages/Error/ErrorPage'
 import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
+  const basename = process.env.NETLIFY ? '' : '/eliete-stpro/admin'
+  
   const router = createBrowserRouter([
     {
-      path: '/',
-      element: <Navigate to="/admin" replace />,
-      errorElement: <ErrorPage />
-    },
-    {
-      path: '/admin/login',
+      path: '/login',
       element: <Login />,
       errorElement: <ErrorPage />
     },
     {
-      path: '/admin/register',
+      path: '/register',
       element: <Register />,
       errorElement: <ErrorPage />
     },
     {
-      path: '/admin',
+      path: '/',
       element: (
         <ProtectedRoute>
           <Layout />
@@ -51,7 +48,7 @@ function App() {
       element: <ErrorPage />
     }
   ], {
-    basename: process.env.NETLIFY ? '' : '/eliete-stpro/admin'
+    basename: basename
   })
 
   return <RouterProvider router={router} />

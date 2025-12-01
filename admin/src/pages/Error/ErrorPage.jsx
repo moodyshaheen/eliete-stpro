@@ -13,7 +13,7 @@ function ErrorPage() {
         <h1>404</h1>
         <h2>Page Not Found</h2>
         <p>The page you're looking for doesn't exist.</p>
-        <button onClick={() => navigate('/admin')} className="home-btn">
+        <button onClick={() => navigate('/')} className="home-btn">
           <FaHome />
           <span>Go to Dashboard</span>
         </button>

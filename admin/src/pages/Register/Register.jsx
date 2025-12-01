@@ -65,7 +65,7 @@ function Register() {
       if (response && response.success) {
         toast.success('Registration successful! Please login.')
         setTimeout(() => {
-          navigate('/admin/login')
+          navigate('/login')
         }, 1000)
       } else {
         toast.error(response?.message || 'Registration failed')
@@ -194,7 +194,7 @@ function Register() {
         <div className="register-footer">
           <p>
             Already have an account?{' '}
-            <Link to="/admin/login">Sign in here</Link>
+            <Link to="/login">Sign in here</Link>
           </p>
         </div>
       </div>

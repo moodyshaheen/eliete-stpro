@@ -26,7 +26,7 @@ function ProtectedRoute({ children }) {
   }
 
   if (!isAuthenticated || !user || user.role !== 'admin') {
-    return <Navigate to="/admin/login" replace />
+    return <Navigate to="/login" replace />
   }
 
   return children

@@ -62,7 +62,7 @@
 }
 
 .close-btn {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   background: none;
@@ -76,6 +76,8 @@
   opacity: 0.8;
   min-width: 32px;
   min-height: 32px;
+  z-index: 1001;
+  position: relative;
 }
 
 .close-btn:hover {
@@ -164,10 +166,6 @@
 
   .sidebar.open {
     transform: translateX(0);
-  }
-
-  .close-btn {
-    display: block;
   }
 }
 

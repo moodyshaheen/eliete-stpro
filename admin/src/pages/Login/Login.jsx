@@ -29,7 +29,7 @@ function Login() {
       if (result.success) {
         toast.success('Login successful!')
         setTimeout(() => {
-          navigate('/admin')
+          navigate('/')
         }, 500)
       } else {
         toast.error(result.error || 'Login failed')
@@ -102,7 +102,7 @@ function Login() {
         <div className="login-footer">
           <p>
             Don't have an account?{' '}
-            <Link to="/admin/register">Register here</Link>
+            <Link to="/register">Register here</Link>
           </p>
         </div>
       </div>

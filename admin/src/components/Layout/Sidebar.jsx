@@ -15,16 +15,16 @@ function Sidebar({ isOpen, setIsOpen }) {
   const handleLogout = async (e) => {
     e.preventDefault()
     await logout()
-    navigate('/admin')
+      navigate('/')
   }
 
   const menuItems = [
-    { path: '/admin', icon: <FaHome />, label: 'Dashboard' },
-    { path: '/admin/products', icon: <FaShoppingBag />, label: 'Products' },
-    { path: '/admin/orders', icon: <FaBox />, label: 'Orders' },
-    { path: '/admin/users', icon: <FaUsers />, label: 'Users' },
-    { path: '/admin/analytics', icon: <FaChartLine />, label: 'Analytics' },
-    { path: '/admin/settings', icon: <FaCog />, label: 'Settings' },
+    { path: '/', icon: <FaHome />, label: 'Dashboard' },
+    { path: 'products', icon: <FaShoppingBag />, label: 'Products' },
+    { path: 'orders', icon: <FaBox />, label: 'Orders' },
+    { path: 'users', icon: <FaUsers />, label: 'Users' },
+    { path: 'analytics', icon: <FaChartLine />, label: 'Analytics' },
+    { path: 'settings', icon: <FaCog />, label: 'Settings' },
   ]
 
   return (
@@ -36,23 +36,36 @@ function Sidebar({ isOpen, setIsOpen }) {
             <FaShoppingBag className="logo-icon" />
             <span className="logo-text">EliteStore Admin</span>
           </div>
-          <button className="close-btn" onClick={() => setIsOpen(false)}>
+          <button 
+            className="close-btn" 
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              setIsOpen(false)
+            }}
+            aria-label="Close sidebar"
+          >
             <FaTimes />
           </button>
         </div>
 
         <nav className="sidebar-nav">
-          {menuItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              <span className="nav-icon">{item.icon}</span>
-              <span className="nav-label">{item.label}</span>
-            </Link>
-          ))}
+          {menuItems.map((item) => {
+            const isActive = item.path === '/' 
+              ? location.pathname.endsWith('/admin') || location.pathname.endsWith('/admin/')
+              : location.pathname.endsWith(`/${item.path}`) || location.pathname.endsWith(`/${item.path}/`)
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`nav-item ${isActive ? 'active' : ''}`}
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="nav-icon">{item.icon}</span>
+                <span className="nav-label">{item.label}</span>
+              </Link>
+            )
+          })}
         </nav>
 
         <div className="sidebar-footer">
