@@ -30,7 +30,7 @@ function Sidebar({ isOpen, setIsOpen }) {
   return (
     <>
       <div className={`sidebar-overlay ${isOpen ? 'active' : ''}`} onClick={() => setIsOpen(false)} />
-      <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <aside className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
           <div className="logo">
             <FaShoppingBag className="logo-icon" />

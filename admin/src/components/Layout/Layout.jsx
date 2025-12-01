@@ -5,7 +5,7 @@ import Header from './Header'
 import './Layout.css'
 
 function Layout() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(true)
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen)
@@ -14,7 +14,7 @@ function Layout() {
   return (
     <div className="admin-layout">
       <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
-      <div className="admin-main">
+      <div className={`admin-main ${!sidebarOpen ? 'sidebar-closed' : ''}`}>
         <Header toggleSidebar={toggleSidebar} />
         <main className="admin-content">
           <Outlet />
