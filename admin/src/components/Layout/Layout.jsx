@@ -15,7 +15,7 @@ function Layout() {
     <div className="admin-layout">
       <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
       <div className={`admin-main ${!sidebarOpen ? 'sidebar-closed' : ''}`}>
-        <Header toggleSidebar={toggleSidebar} />
+        <Header toggleSidebar={toggleSidebar} sidebarOpen={sidebarOpen} />
         <main className="admin-content">
           <Outlet />
         </main>

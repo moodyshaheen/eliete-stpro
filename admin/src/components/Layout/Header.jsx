@@ -3,14 +3,19 @@ import { FaBars, FaBell, FaSearch, FaUserCircle } from 'react-icons/fa'
 import { useAuth } from '../../context/AuthContext'
 import './Header.css'
 
-function Header({ toggleSidebar }) {
+function Header({ toggleSidebar, sidebarOpen }) {
   const [notifications] = useState(5)
   const { user } = useAuth()
 
   return (
     <header className="admin-header">
       <div className="header-left">
-        <button className="menu-toggle" onClick={toggleSidebar}>
+        <button 
+          className="menu-toggle" 
+          onClick={toggleSidebar}
+          aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
+          title={sidebarOpen ? "Close sidebar" : "Open sidebar"}
+        >
           <FaBars />
         </button>
         <div className="search-box">
