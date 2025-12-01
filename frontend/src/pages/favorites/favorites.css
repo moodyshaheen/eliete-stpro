@@ -1,0 +1,271 @@
+.favorites-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.favorites-header {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.heart-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.favorites-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.favorites-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.favorites-container {
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.favorite-card {
+  position: relative;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.favorite-img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.favorite-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.favorite-card:hover .favorite-img {
+  transform: scale(1.1);
+}
+
+.favorite-badges {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.badge {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 6px;
+  color: white;
+}
+
+.badge.sale {
+  background-color: #dc2626;
+}
+
+.badge.new {
+  background-color: #10b981;
+}
+
+.badge.popular {
+  background-color: #3b82f6;
+}
+
+.remove-favorite-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(220, 38, 38, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.remove-favorite-btn:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+.remove-favorite-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.favorite-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.favorite-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.favorite-rating {
+  font-size: 13px;
+  color: #f59e0b;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rating-count {
+  color: #6b7280;
+  margin-left: 5px;
+}
+
+.favorite-price-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.favorite-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.favorite-old-price {
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.add-to-cart-fav-btn {
+  background: linear-gradient(135deg, #065f46, #10b981);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-fav-btn:hover {
+  background: linear-gradient(135deg, #044b39, #059669);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 95, 70, 0.3);
+}
+
+.add-to-cart-fav-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.empty-favorites {
+  text-align: center;
+  padding: 100px 20px;
+  color: #6b7280;
+}
+
+.empty-heart {
+  font-size: 5rem;
+  color: #d1d5db;
+  margin-bottom: 20px;
+}
+
+.empty-favorites h2 {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.empty-favorites p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.browse-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #065f46, #10b981);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.browse-btn:hover {
+  background: linear-gradient(135deg, #044b39, #059669);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 95, 70, 0.3);
+}
+
+@media (max-width: 768px) {
+  .favorites-header h1 {
+    font-size: 2rem;
+  }
+  
+  .favorites-header p {
+    font-size: 1rem;
+  }
+
+  .heart-icon {
+    font-size: 3rem;
+  }
+
+  .favorites-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+

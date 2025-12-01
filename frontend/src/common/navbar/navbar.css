@@ -1,0 +1,207 @@
+/* BASIC */
+.navbar{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nonebul{ display: none; }
+
+/* ------------ TOP BAR ------------ */
+.n-top{
+    display: flex;
+    padding: 10px 90px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #065f46;
+    color: white;
+}
+
+.nt-left, .nt-right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.phone, .email{ display: flex; align-items: center; gap: 8px; }
+
+/* ------------ BOTTOM NAV ------------ */
+.n-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 90px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* LOGO */
+.logo .logorif{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.iconlogo{ color: #065f46; }
+
+/* MENU LIST */
+.listst{
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+}
+
+.listst li a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: .3s;
+}
+
+.listst li a:hover{ color: #065f46; }
+
+/* SEARCH */
+.sercarus{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.serche{
+    position: relative;
+}
+
+.inptser{
+    padding: 8px 35px 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: .3s;
+}
+
+.inptser:focus{ border-color: #10b981; }
+
+.searchicon{
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+}
+
+/* ICONS */
+.iconimpo{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+}
+
+.icon-badge{ position: relative; }
+.icn{ font-size: 22px; }
+
+.badge{
+    position: absolute;
+    top: -5px; right: -10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    color: white;
+}
+.green{ background:#10b981; }
+.red{ background:red; }
+
+/* USER MENU */
+.fauserlor{
+    position: absolute;
+    background: #eee;
+    padding: 15px 0;
+    border-radius: 8px;
+    right: 0;
+    top: 40px;
+    width: 150px;
+    display: none;
+    flex-direction: column;
+}
+
+.fauserlor.show{ display: flex; }
+
+.fauserlor a{
+    padding: 10px;
+    text-align: center;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.fauserlor a:hover{
+    background: white;
+}
+
+/* HAMBURGER */
+.hamburger{
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+.usericon56{ font-size: 23px; color: #333; transition: .5s; } 
+.usericon56:hover{ color: #000; }
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 992px){
+    .n-top{
+        padding: 10px 20px;
+    }
+
+    .n-bottom{
+        padding: 18px 20px;
+    }
+
+    .sercarus .serche{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+
+    .hamburger{
+        display: block;
+    }
+
+    .listst{
+        position: absolute;
+        top: 130px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
+        display: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .listst.open{
+        display: flex;
+    }
+
+    .iconimpo{
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px){
+    .nt-left span:nth-child(2){ display:none; }
+
+    .n-bottom{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .iconimpo{
+        gap: 12px;
+    }
+}

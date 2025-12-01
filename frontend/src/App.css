@@ -1,0 +1,31 @@
+/* Toast Notifications Styles - تظهر فوق الناف بار مباشرة */
+/* الناف بار له z-index: 9999، لذلك الإشعارات تحتاج z-index أعلى */
+
+/* Container للإشعارات - يظهر من تحت الناف بار مباشرة */
+div[data-sonner-toaster],
+.react-hot-toast-container {
+  top: 100px !important;
+  z-index: 10000 !important;
+  position: fixed !important;
+}
+
+/* كل إشعار */
+.react-hot-toast {
+  z-index: 10000 !important;
+  position: relative !important;
+}
+
+.react-hot-toast > div {
+  z-index: 10000 !important;
+}
+
+/* التأكد من أن الإشعارات تظهر فوق كل شيء */
+[data-sonner-toast] {
+  z-index: 10000 !important;
+}
+
+/* إصلاح مشكلة ظهور الإشعارات خلف العناصر */
+.react-hot-toast-container > div {
+  z-index: 10000 !important;
+}
+

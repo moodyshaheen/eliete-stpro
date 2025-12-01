@@ -1,0 +1,281 @@
+.cat-container {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.cat-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.cat-subtitle {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+/* أزرار الكاتيجوري */
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.category-btn {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.category-btn.active {
+  background-color: #047857;
+  color: #fff;
+  border: 2px solid #064e3b;
+}
+
+.category-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* شبكة المنتجات */
+.product-grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  gap: 25px;
+  padding: 0 40px;
+  justify-content: center;
+}
+
+/* الكارت */
+.product-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* الصورة */
+.product-img-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #f9fafb;
+  width: 100%;
+  height: 220px;
+}
+
+.product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.4s ease;
+  background-color: #f9fafb;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* الأيقونات تظهر فقط عند hover */
+.product-icons {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .product-icons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* إخفاء القلب من hover إذا كان المنتج في المفضلة */
+.product-card:hover .product-icons .icon-btn.favorited {
+  display: none;
+}
+
+.icon-btn {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #047857;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: #047857;
+  color: white;
+}
+
+.icon-btn.favorited {
+  background-color: #dc2626;
+  color: white;
+}
+
+.icon-btn.favorited:hover {
+  background-color: #b91c1c;
+}
+
+/* البادجات */
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 6px;
+  color: white;
+  width: 20%;
+}
+
+.badge.sale {
+  background-color: #dc2626;
+}
+.badge.new {
+  background-color: #10b981;
+}
+.badge.popular {
+  background-color: #3b82f6;
+}
+
+/* معلومات المنتج */
+.product-info {
+  padding: 15px;
+  text-align: left;
+}
+
+.product-info h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #111827;
+}
+
+.product-rating {
+  font-size: 13px;
+  color: #f59e0b;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rating-count {
+  color: #6b7280;
+}
+
+/* معلومات الـ Stock والكمية في السلة */
+.product-stock-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.stock-label {
+  color: #6b7280;
+}
+
+.stock-label strong {
+  color: #047857;
+  font-weight: 600;
+}
+
+.cart-quantity-badge {
+  background-color: #047857;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #047857;
+  margin-bottom: 10px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  font-size: 13px;
+  color: #9ca3af;
+  margin-left: 6px;
+}
+
+/* زر Add to Cart */
+.add-to-cart-btn {
+  background-color: #047857;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #065f46;
+}
+
+/* زر تحميل المزيد */
+.load-more {
+  margin-top: 30px;
+}
+
+.load-more button {
+  background-color: #047857;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.load-more button:hover {
+  background-color: #065f46;
+}
