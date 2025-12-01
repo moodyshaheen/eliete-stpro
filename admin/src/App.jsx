@@ -51,7 +51,7 @@ function App() {
       element: <ErrorPage />
     }
   ], {
-    basename: '/eliete-stpro/admin'
+    basename: process.env.NETLIFY ? '' : '/eliete-stpro/admin'
   })
 
   return <RouterProvider router={router} />

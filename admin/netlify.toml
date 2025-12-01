@@ -1,0 +1,13 @@
+# Netlify configuration for Admin Panel
+
+[build]
+  base = "."
+  command = "NETLIFY=true npm install && NETLIFY=true npm run build"
+  publish = "dist"
+
+# Redirect rules for React Router (SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+

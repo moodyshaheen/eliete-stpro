@@ -1,0 +1,12 @@
+# Netlify configuration for Frontend
+
+[build]
+  base = "frontend"
+  command = "NETLIFY=true npm install && NETLIFY=true npm run build"
+  publish = "frontend/dist"
+
+# Redirect rules for React Router (SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -29,7 +29,7 @@ function App() {
       ]
     }
   ], {
-    basename: '/eliete-stpro'
+    basename: process.env.NETLIFY ? '' : '/eliete-stpro'
   });
 
   return (
