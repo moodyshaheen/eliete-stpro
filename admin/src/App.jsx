@@ -50,7 +50,9 @@ function App() {
       path: '*',
       element: <ErrorPage />
     }
-  ])
+  ], {
+    basename: '/eliete-stpro/admin'
+  })
 
   return <RouterProvider router={router} />
 }
